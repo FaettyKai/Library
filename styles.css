@@ -1,0 +1,40 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .add {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    height: 2.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  form {
+    width: 50vw;
+    display: grid;
+    grid-template:
+      "label input"
+      "label input"
+      "label input"
+      "label input";
+    border: solid black;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 10px 10px 5px purple;
+    position: relative;
+    opacity: 0;
+  }
+  
+  main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
