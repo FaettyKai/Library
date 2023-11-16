@@ -1,27 +1,38 @@
-// array for books
-const myLibrary = []
+// Array for Library to push books
+const library = []
 
-//add books to library
-function addBook() {
-	
+// Select from HTML DOM & open form/modal
+const show = document.querySelector(".add")
+const form = document.querySelector("#show")
+
+show.addEventListener("click", () => {
+	form.showModal()
+})
+
+// Add value's to fields
+const title = document.getElementById("title")
+const author = document.getElementById("author")
+const year = document.getElementById("year")
+const close = document.querySelector(".submit")
+
+// Constructor for books
+function book(title, author, year) {
+	this.title = title,
+  this.author = author,
+  this.year = year
 }
 
-// Have add reveal the form to add a book to library 
-const add = document.querySelector(".add")
-const form = document.querySelector("form")
-add.addEventListener("click", () => {
-	form.setAttribute("style", "opacity: 1; transition: opacity 1s;")
-  function book(title, author, year, read) {
-  	this.title = title,
-    this.author = author,
-    this.year = year,
-    this.read = read
-  }
+// To close & push books to library when submitted & reset form
+close.addEventListener("click", (e) => {
+	e.preventDefault()
+  form.close()
+  var newBook = new book(title.value, author.value, year.value)
+  console.log(newBook)
+  library.push(newBook)
+  console.log(library)
+  
+  title.value = " "
+  author.value = " "
+  year.value = " "
 })
 
-// Clicking submit rehides the form 
-const submit = document.querySelector(".submit")
-submit.addEventListener("click", () => {
-	form.setAttribute("style", "opacity: 0; transition: opacity 1s;")
-  submit.preventDefault()
-})

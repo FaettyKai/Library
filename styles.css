@@ -29,7 +29,6 @@ header {
     border-radius: 8px;
     box-shadow: 10px 10px 5px purple;
     position: relative;
-    opacity: 0;
   }
   
   main {
